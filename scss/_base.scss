@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Mitr', sans-serif;
+  background-color: $base;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  width: 100vw;
+  max-width: 1400px;
+  height: 100vh;
+  background-image: url(../img/tlo.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+button {
+  padding: 5px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: $text;
+  color: $color4;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  transition: color .6s,
+    border-color .6s,
+    background-color .6s;
+}
+
+button:hover {
+  background-color: $color4;
+  color: $text;
+}
+
+@media (min-width: 992px) and (min-height: 1024px) {
+  .container {
+    margin-top: 80px;
+    height: 900px;
+    border: 4px solid $color3;
+  }
+}

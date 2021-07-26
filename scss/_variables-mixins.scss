@@ -1,0 +1,21 @@
+// -----variables
+$base:#b2d5fd;
+$color1: #1d82f6;
+$color2: #1767c2;
+$color3: #68aaf7;
+$color4: #0e3e75;
+$color5: #315175;
+$text: #fff;
+$table:#000;
+
+//------mixins
+
+@mixin nazwa {}
+
+@media (min-width: 576px) and (max-height: 428px) {}
+
+@media (min-width: 768px) and (orientation: portrait) {}
+
+@media (min-width: 992px) and (max-height: 992px) {}
+
+@media (min-width: 992px) {}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.min.css">
+  <title>Gra w kosci</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="welcome active" data-welcome>
+      <h1 class="welcome__h1"> kości </h1>
+      <h2 class="welcome__h2">wybierz liczbę graczy</h2>
+      <div class="welcome__inputs">
+        <label class="welcome__label">1
+          <input class="welcome__imput" type="radio" name="player" value="1" checked data-checked>
+          <span class="welcome__span"></span>
+        </label>
+        <label class="welcome__label">2
+          <input class="welcome__imput" type="radio" name="player" value="2" data-checked>
+          <span class="welcome__span"></span>
+        </label>
+        <label class="welcome__label">3
+          <input class="welcome__imput" type="radio" name="player" value="3" data-checked>
+          <span class="welcome__span"></span>
+        </label>
+        <label class="welcome__label">4
+          <input class="welcome__imput" type="radio" name="player" value="4" data-checked>
+          <span class="welcome__span"></span>
+        </label>
+      </div>
+      <button class="welcome__btn-confirm" data-confirm>start</button>
+      <button class="welcome__btn-rules" data-rules>zasady gry w kości</button>
+    </div>
+    <div class="main" data-main>
+      <div class="main__score-container">
+        <div class="main__score" data-store></div>
+      </div>
+      <div class="main__game">
+        <h2 class="main__h2" data-howManyThrows></h2>
+        <div class="main__bones" data-gameBones></div>
+        <div class="main__selected-bounes" data-selectedBones></div>
+        <button class="main__throw" data-throw>rzuć</button>
+      </div>
+    </div>
+    <div class="end-game" data-endGame>
+      <div class="end-game__container">
+        <h1 class="end-game__h1" data-win>Wynik</h1>
+        <div class="end-game__btn-container">
+          <button class="end-game__btn-again" data-btnAgain>jeszcze raz</button>
+          <button class="end-game__btn-home" data-btnHome>początek</button>
+        </div>
+      </div>
+    </div>
+    <div class="rules" data-rulesText>
+      <div class="rules__text">
+        <h3 class="rules__h3">zasady gry w kości</h3>
+        <p class="rules__p">W każdej z 13 kolejek każdy z graczy ma do dyspozycji trzy rzuty kostkami. Pierwszy z nich
+          odbywa się zawsze
+          wszystkimi pięcioma kostkami, a w drugim i trzecim, które nie są obowiązkowe, wybrane kostki mogą zostać
+          zatrzymane; rzut odbywa się wtedy tylko niezatrzymanymi.</p>
+
+        <p class="rules__p">Po wykonaniu rzutów układ oczek uzyskany na kostkach musi zostać zapisany przez gracza w
+          tabeli punktacji do
+          jednej z 13 kategorii. Każdy gracz zapisuje punkty za wybierane kategorie we własnej kolumnie tabeli. Raz
+          wybrana kategoria nie może być później ponownie wybrana.</p>
+        <h4 class="rules__h4">Kategorie górnej części tabeli</h4>
+        <p class="rules__p"> &bull; &nbsp;jedynki, dwójki, trójki, czwórki, piątki, szóstki.</p>
+        <p class="rules__p">Wybierając jedną z nich, w pozycji odpowiadającej kategorii wpisuje się sumę oczek z kostek
+          wskazujących
+          wybraną liczbę.
+
+          Na przykład, jeśli gracz wyrzuci układ 4, 3, 4, 4, 1 i wskaże kategorię "czwórki", to uzyska 12 pkt. (bo w
+          układzie są trzy czwórki), a jeśli wybierze "trójki", to 3 pkt. (bo wyrzucił tylko jedną trójkę).
+
+          Jeśli w górnych kategoriach tabeli (od jedynek do szóstek) uzyska się razem 63 pkt. lub więcej, to dodatkowo
+          otrzymuje się premię w wysokości 35 pkt.</p>
+        <h4 class="rules__h4">Kategorie dolnej części tabeli</h4>
+        <p class="rules__p">&bull; &nbsp;trzy jednakowe -- jeśli w układzie występują trzy jednakowe liczby oczek,
+          uzyskuje się sumę
+          oczek z wszystkich pięciu kostek; np. dla układu 6,5,2,5,5, byłoby to 23 pkt.</p>
+        <p class="rules__p">&bull; &nbsp;cztery jednakowe -- j.w., ale co najmniej cztery jednakowe liczby oczek;</p>
+        <p class="rules__p">&bull; &nbsp;full -- 25 pkt., jeśli w układzie występują trzy jednakowe liczby oczek oraz
+          dwie inne
+          jednakowe, np. 4, 2, 4, 4, 2 (trzy czwórki i dwie dwójki);</p>
+        <p class="rules__p">&bull; &nbsp;mały strit -- 30 pkt., jeśli w układzie występują cztery kolejne liczby oczek,
+          np. 2, 3, 4, 5,
+          2; albo 6, 1, 2, 3, 4; itp. (kolejność liczb na kostkach nie gra roli, bo nawet nie są numerowane);</p>
+        <p class="rules__p">&bull; &nbsp;duży strit -- 40 pkt., j.w., ale liczby oczek z wszystkich kostek muszą być
+          kolejnymi liczbami;
+        </p>
+        <p class="rules__p">&bull; &nbsp;generał -- 50 pkt., jeśli liczba oczek na wszystkich kostkach jest jednakowa;
+          szansa -- niezależnie od układu kostek uzyskuje się sumę oczek z wszystkich kostek;</p><br><br><br><br>
+        <button class="rules__btn" data-back></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

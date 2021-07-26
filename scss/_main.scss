@@ -1,0 +1,373 @@
+.main.active {
+  display: flex;
+}
+
+.main {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  &__score-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 55%;
+    background-color: $color1;
+    opacity: 0.9;
+
+    .main__score {
+      padding-top: 10px;
+      display: flex;
+      justify-content: center;
+      height: 100%;
+
+      .main__player {
+        margin-left: -1px;
+      }
+
+      .main__box,
+      .main__box-player {
+        margin-top: -1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 5.7%;
+        border-bottom: 1px solid $table;
+        letter-spacing: .1rem;
+      }
+
+      .main__box-player {
+        width: 60px;
+        border-left: 1px solid $table;
+        cursor: pointer;
+      }
+
+      .main__click {
+        cursor: unset;
+      }
+
+      .main__bold {
+        border-bottom: 2px solid $table;
+        font-weight: 600;
+        cursor: unset;
+      }
+    }
+  }
+
+  &__game {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 45%;
+    background-color: $color3;
+    opacity: 0.97;
+
+    .main__h2 {
+      display: inline-block;
+      width: 100%;
+      height: 10%;
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: .1rem;
+      color: $color4;
+    }
+
+    .main__bones {
+      position: relative;
+      width: 80%;
+      height: 70%;
+      margin-top: -30px;
+
+      .main__bone {
+        display: none;
+        width: 50px;
+        position: absolute;
+        cursor: pointer;
+      }
+
+      .main__bone0 {
+        top: 6%;
+        left: 10%;
+        transform: rotate(30deg);
+      }
+
+      .main__bone1 {
+        top: 9%;
+        left: 70%;
+        transform: rotate(-12deg)
+      }
+
+      .main__bone2 {
+        top: 30%;
+        left: 42%;
+        transform: rotate(2deg)
+      }
+
+      .main__bone3 {
+        top: 55%;
+        left: 12%;
+        transform: rotate(-50deg)
+      }
+
+      .main__bone4 {
+        top: 62%;
+        left: 68%;
+        transform: rotate(80deg)
+      }
+
+      .main__bone.active {
+        display: block;
+      }
+    }
+
+    .main__selected-bounes {
+      margin-top: -30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 50px;
+      height: 250px;
+      border-radius: 5px;
+      background-color: #ffffff80;
+
+      .main__bone-selected {
+        position: initial;
+        margin-top: 8px;
+        width: 40px;
+        height: 40px;
+        transform: rotate(0deg);
+      }
+    }
+
+    .main__throw {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate(10%, -20%);
+      font-size: 2.4rem;
+      color: $text;
+      background-color: $color4;
+      cursor: pointer;
+    }
+
+    .main__throw.inactive {
+      background-color: $color3;
+      color: $color3;
+      cursor: unset;
+    }
+  }
+}
+
+
+@media (min-width: 576px) and (max-height: 428px) {
+  .main {
+    flex-direction: row;
+
+    &__score-container {
+      width: 55%;
+      height: 100%;
+    }
+
+    &__game {
+      width: 45%;
+      height: 100%;
+
+      .main__bone.active {
+        display: block;
+      }
+    }
+
+    .main__selected-bounes {
+      margin-top: -100px;
+    }
+  }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .main {
+    &__score-container {
+      .main__score {
+
+        .main__box,
+        .main__box-player {
+          width: 140px;
+          font-size: 1.8rem;
+        }
+
+        .main__box-player {
+          width: 100px;
+        }
+      }
+    }
+
+    &__game {
+      .main__h2 {
+        font-size: 2.8rem;
+      }
+
+      .main__bones {
+
+        width: 70%;
+        margin: -90px 0 0 60px;
+
+        .main__bone {
+          width: 90px;
+        }
+      }
+
+      .main__selected-bounes {
+        margin-top: -60px;
+        width: 96px;
+        height: 435px;
+
+        .main__bone-selected {
+          width: 77px;
+          height: 77px;
+        }
+      }
+
+      .main__throw {
+        padding: 10px 30px;
+        font-size: 3.6rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-height: 992px) {
+  .main {
+
+    &__score-container {
+
+      .main__score {
+
+        .main__box,
+        .main__box-player {
+          width: 140px;
+          height: 5.6%;
+          font-size: 1.8rem;
+        }
+
+        .main__box-player {
+          width: 100px;
+        }
+      }
+    }
+
+    &__game {
+      flex-direction: column;
+      justify-content: start;
+
+      .main__h2 {
+        margin: 40px 0;
+        font-size: 2.8rem;
+      }
+
+      .main__bones {
+        margin-top: 0;
+        width: 100%;
+        height: 50%;
+
+        .main__bone {
+          width: 90px;
+        }
+      }
+
+      .main__selected-bounes {
+        flex-direction: row;
+        margin: 0;
+        width: 435px;
+        height: 90px;
+
+        .main__bone-selected {
+          margin: 5px;
+          width: 77px;
+          height: 77px;
+        }
+      }
+
+      .main__throw {
+        transform: translate(-50%, -50%);
+        padding: 10px 30px;
+        font-size: 3.6rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .main {
+    flex-direction: row;
+
+    &__score-container {
+      width: 55%;
+      height: 100%;
+
+
+      .main__score {
+        height: 80%;
+
+        .main__box,
+        .main__box-player {
+          width: 140px;
+          height: 5.6%;
+          font-size: 1.8rem;
+        }
+
+        .main__box-player {
+          width: 100px;
+        }
+      }
+    }
+
+    &__game {
+      flex-direction: column;
+      justify-content: start;
+      width: 45%;
+      height: 100%;
+
+      .main__h2 {
+        margin: 40px 0;
+        font-size: 2.8rem;
+      }
+
+      .main__bones {
+        margin: 0;
+        width: 90%;
+        height: 50%;
+
+        .main__bone {
+          width: 90px;
+        }
+      }
+
+      .main__selected-bounes {
+        flex-direction: row;
+        margin: 40px 0;
+        width: 435px;
+        height: 90px;
+
+        .main__bone-selected {
+          margin: 5px;
+          width: 77px;
+          height: 77px;
+        }
+      }
+
+      .main__throw {
+        transform: translate(-50%, -50%);
+        padding: 10px 30px;
+        font-size: 3.6rem;
+      }
+    }
+  }
+}
